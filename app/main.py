@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import List
 
-from app.utils import normalise_city_names
+from app.utils import process_cities
 from app.services.weather_service import weather_fetch
 from app.tasks import fetch_weather_task
 
@@ -19,7 +19,7 @@ def get_weather(request: CityRequest):
     if not request:
         raise HTTPException(status_code=400, detail="City list cannot be empty")
 
-    normalised_cities = [normalise_city_names(city) for city in request.cities]
+    normalised_cities = process_cities(request.cities)
 
     weather_data = [weather_fetch(city) for city in normalised_cities]
 
