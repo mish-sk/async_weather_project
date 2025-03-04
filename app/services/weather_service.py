@@ -28,6 +28,8 @@ def weather_fetch(city: str) -> dict:
 
         return {
             "city": city,
+            "region": data["location"]["region"],
+            "country": data["location"]["country"],
             "temperature": data["current"]["temp_c"],
             "description": data["current"]["condition"]["text"]
         }
