@@ -241,7 +241,7 @@ celerybeat.pid
 .env
 .venv
 env/
-venv/
+../venv/
 ENV/
 env.bak/
 venv.bak/
@@ -293,3 +293,11 @@ pyrightconfig.json
 *.rdb
 
 # End of https://www.toptal.com/developers/gitignore/api/python,redis,pycharm
+/venv/
+/.idea/.gitignore
+/.idea/async_weather_project.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/vcs.xml
